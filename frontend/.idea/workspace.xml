@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ccb316bc-24ac-4925-9269-2e0eb9ab2532" name="Changes" comment="adding front">
+      <change afterPath="$PROJECT_DIR$/app/components/nav/Nav.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/theme/themeLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/definitions.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mystocks/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/signup/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/stock/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/weather/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/stock/Stock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/user/ERole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/user/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/wallet/Wallet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/weather/EWeatherCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/weather/Weather.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/weather/WeatherCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/stock/StockRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/user/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/user/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/wallet/WalletRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherConditionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/jwt/AuthEntryPointJwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/jwt/AuthTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/jwt/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/payload/request/SignupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/payload/response/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/payload/response/UserInfoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/user/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/user/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/wallet/WalletService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherConditionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2YoeWRKTp4TIFDQYBDVeytwRaKn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projekty/ProjektyWWolnymCzasie/DateForm&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Projekty\\ProjektyWWolnymCzasie\\WeatherStock\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\moderator" />
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\mystocks" />
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\login" />
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\stock" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\moderator\users" />
+      <recent name="C:\Projekty\ProjektyWWolnymCzasie\WeatherStock\frontend\app\components\theme" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccb316bc-24ac-4925-9269-2e0eb9ab2532" name="Changes" comment="" />
+      <created>1701196391951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701196391951</updated>
+      <workItem from="1701196395552" duration="1465000" />
+      <workItem from="1701238257788" duration="64000" />
+      <workItem from="1701287429604" duration="1264000" />
+      <workItem from="1701463788464" duration="593000" />
+      <workItem from="1701804414835" duration="20000" />
+      <workItem from="1702400075148" duration="3950000" />
+      <workItem from="1703004340521" duration="1291000" />
+      <workItem from="1703016085559" duration="147000" />
+      <workItem from="1703413452965" duration="1285000" />
+      <workItem from="1703423140320" duration="2199000" />
+      <workItem from="1704225411792" duration="1928000" />
+      <workItem from="1704649697840" duration="4016000" />
+      <workItem from="1704744071800" duration="2672000" />
+      <workItem from="1704801080636" duration="7000" />
+      <workItem from="1704801097719" duration="4000" />
+      <workItem from="1704831893873" duration="437000" />
+      <workItem from="1704904974413" duration="13053000" />
+      <workItem from="1704986131730" duration="1854000" />
+      <workItem from="1705000070227" duration="2332000" />
+      <workItem from="1705069812455" duration="4199000" />
+      <workItem from="1705257778238" duration="1068000" />
+      <workItem from="1705328984336" duration="3253000" />
+      <workItem from="1705423695781" duration="4266000" />
+      <workItem from="1705516660793" duration="1267000" />
+      <workItem from="1705558286080" duration="760000" />
+      <workItem from="1705576043594" duration="3512000" />
+      <workItem from="1705668416058" duration="614000" />
+      <workItem from="1705827485532" duration="1094000" />
+      <workItem from="1705850651621" duration="976000" />
+      <workItem from="1705916528458" duration="10235000" />
+      <workItem from="1705994565965" duration="9011000" />
+      <workItem from="1706040522908" duration="6752000" />
+      <workItem from="1706084890768" duration="6631000" />
+      <workItem from="1706108041979" duration="2199000" />
+      <workItem from="1706127346891" duration="8000" />
+      <workItem from="1706201523380" duration="2855000" />
+      <workItem from="1706550478923" duration="172000" />
+      <workItem from="1708537044338" duration="933000" />
+      <workItem from="1708807378924" duration="1068000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding front" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding front" />
+  </component>
+</project>
