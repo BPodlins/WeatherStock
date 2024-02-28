@@ -21,9 +21,6 @@ public class WeatherService {
     @Autowired
     private WeatherRepository weatherRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
-
     public Weather getWeather(String date) {
         return weatherRepository.findByDate(date).orElse(null);
     }

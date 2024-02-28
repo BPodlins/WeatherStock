@@ -1,12 +1,8 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.weather.WeatherCondition;
-import com.example.backend.repository.weather.WeatherConditionRepository;
 import com.example.backend.model.weather.Weather;
 import com.example.backend.service.weather.WeatherService;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +26,7 @@ public class WeatherController {
 
     @GetMapping("/admin/getweatherFromAPI")
     public ResponseEntity<List<Weather>> getWeatherInfo() {
-        String apiUrl = "https://meteostat.p.rapidapi.com/stations/daily?station=10637&start=2024-01-01&end=2024-01-31";
+        String apiUrl = "https://meteostat.p.rapidapi.com/stations/daily?station=10637&start=2024-02-01&end=2024-02-29";
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();

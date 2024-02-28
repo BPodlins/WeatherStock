@@ -17,3 +17,8 @@ type Weather = {
         _class: string;
     };
 };
+
+type FormData = {
+    username: string;
+    password: string;
+}

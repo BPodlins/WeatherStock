@@ -33,11 +33,18 @@ const LoginPage = () => {
             })
             .then((data) => {
                 console.log("Login successful", data);
+
+                // Store the token or session ID in local storage or cookies
+                // Example assuming your response contains a token:
+                localStorage.setItem("token", data.token);
+
+                // Now you can redirect to another page or update the UI to reflect the logged-in state
             })
             .catch((error) => {
                 console.error("There was a problem with the login request", error);
             });
     };
+
 
     return (
         <section className={`my-1 overflow-hidden flex p-32 min-h-screen bg-gradient-to-t from-[${theme[0]}] via-[${theme[1]}] to-[${theme[2]}]`}>

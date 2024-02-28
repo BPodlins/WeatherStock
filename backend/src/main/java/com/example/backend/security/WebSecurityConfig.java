@@ -72,8 +72,6 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/mystocks").authenticated()
-                                //.requestMatchers("/moderator/users").hasRole("MODERATOR")
-                                //.requestMatchers("/moderator/users/**").hasRole("ADMIN")
                                 .requestMatchers("/**").permitAll()
                 );
 
