@@ -6,20 +6,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collation = "stock")
 public class Stock {
     @Id
-    private int id;
+    private String id;
     private String name;
     private float priceStart;
     private float priceEnd;
     private String percentage;
 
+    private String date;
+
     public Stock(){
 
     }
 
-    public Stock(String name, float priceStart, float priceEnd, String percentage) {
+    public Stock(String name, float priceStart, float priceEnd, String percentage, String date) {
         this.name = name;
         this.priceStart = priceStart;
         this.priceEnd = priceEnd;
+        this.date = date;
     }
 
     public String calculatePercentAndSet(float start, float end){
@@ -29,6 +32,14 @@ public class Stock {
 
     public String getName() {
         return name;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public void setName(String name) {
