@@ -4,22 +4,31 @@ import Nav from "@/app/components/nav/Nav";
 import React, {useEffect, useState} from "react";
 import theme from "tailwindcss/defaultTheme";
 
-export default function MyStocks(){
-    const [stocksData, setStocksData] = useState([]);
+import { fetchWithCredentials } from '../utils/api';
 
-    useEffect(() => {
-        const fetchStocksData = async () => {
-            try {
-                const response = await fetch("http://localhost:8080/mystocks");
-                const data = await response.json();
-                setStocksData(data);
-            } catch (error) {
-                console.error("Error fetching stocks data:", error);
-            }
+export async function getServerSideProps(context) {
+    const serverSideHeaders = { Cookie: context.req.headers.cookie || '' };
+
+    try {
+        // Attempt to fetch a protected resource or validate the session/token
+        const authCheckUrl = "http://localhost:8080/validateSession"; // Example URL
+        await fetchWithCredentials(authCheckUrl, {}, serverSideHeaders);
+
+        // If the above request succeeds, fetch the actual data for the page
+        const data = await fetchWithCredentials("http://localhost:8080/mystocks", {}, serverSideHeaders);
+
+        // If successful, return the data to the page
+        return { props: { stocksData: data } };
+    } catch (error) {
+        // If authentication fails, redirect to login
+        return {
+            redirect: {
+                destination: '/login',
+                permanent: false,
+            },
         };
-
-        fetchStocksData();
-    }, []);
+    }
+}
 
     return (
         <section className={`flex w-full p-32 bg-gradient-to-t from-[${theme[0]}] via-[${theme[1]}] to-[${theme[2]}]`}>

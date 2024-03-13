@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccb316bc-24ac-4925-9269-2e0eb9ab2532" name="Changes" comment="adding front">
-      <change afterPath="$PROJECT_DIR$/app/components/utils/api.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/definitions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/utils/api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/utils/api.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mystocks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/mystocks/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +112,7 @@
       <workItem from="1708807378924" duration="1068000" />
       <workItem from="1708813853834" duration="1617000" />
       <workItem from="1708851716551" duration="2607000" />
+      <workItem from="1710354093386" duration="2643000" />
     </task>
     <servers />
   </component>

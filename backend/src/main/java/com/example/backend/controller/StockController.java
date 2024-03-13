@@ -40,9 +40,21 @@ public class StockController {
         return ResponseEntity.ok(stockService.getStockParser().getStockList());
     }
 
+    @GetMapping("admin/parseStocksAndLoadToDB01")
+    public ResponseEntity<List<Stock>> allStocks01(){
+        stockService.saveAll01();
+        return ResponseEntity.ok(stockService.getStockParser().getStockList());
+    }
+
     @GetMapping("admin/parseStocksAndLoadToDB2")
     public ResponseEntity<List<Stock>> allStocks2(){
         stockService.saveAll2();
+        return ResponseEntity.ok(stockService.getStockParser().getStockList());
+    }
+
+    @GetMapping("admin/parseStocksAndLoadToDB02")
+    public ResponseEntity<List<Stock>> allStocks02(){
+        stockService.saveAll02();
         return ResponseEntity.ok(stockService.getStockParser().getStockList());
     }
 
@@ -52,9 +64,21 @@ public class StockController {
         return ResponseEntity.ok(stockService.getStockParser().getStockList());
     }
 
+    @GetMapping("admin/parseStocksAndLoadToDB03")
+    public ResponseEntity<List<Stock>> allStocks03(){
+        stockService.saveAll03();
+        return ResponseEntity.ok(stockService.getStockParser().getStockList());
+    }
+
     @GetMapping("admin/parseStocksAndLoadToDB4")
     public ResponseEntity<List<Stock>> allStocks4(){
         stockService.saveAll4();
+        return ResponseEntity.ok(stockService.getStockParser().getStockList());
+    }
+
+    @GetMapping("admin/parseStocksAndLoadToDB04")
+    public ResponseEntity<List<Stock>> allStocks04(){
+        stockService.saveAll04();
         return ResponseEntity.ok(stockService.getStockParser().getStockList());
     }
 

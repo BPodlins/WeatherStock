@@ -26,9 +26,21 @@ public class StockService {
         stockRepository.saveAll(stockParser.getStockList());
     }
 
+    public void saveAll01() {
+        stockParser = new StockParser();
+        stockParser.reloadList01();
+        stockRepository.saveAll(stockParser.getStockList());
+    }
+
     public void saveAll2() {
         stockParser = new StockParser();
         stockParser.reloadList2();
+        stockRepository.saveAll(stockParser.getStockList());
+    }
+
+    public void saveAll02() {
+        stockParser = new StockParser();
+        stockParser.reloadList02();
         stockRepository.saveAll(stockParser.getStockList());
     }
 
@@ -38,9 +50,21 @@ public class StockService {
         stockRepository.saveAll(stockParser.getStockList());
     }
 
+    public void saveAll03() {
+        stockParser = new StockParser();
+        stockParser.reloadList03();
+        stockRepository.saveAll(stockParser.getStockList());
+    }
+
     public void saveAll4() {
         stockParser = new StockParser();
         stockParser.reloadList4();
+        stockRepository.saveAll(stockParser.getStockList());
+    }
+
+    public void saveAll04() {
+        stockParser = new StockParser();
+        stockParser.reloadList04();
         stockRepository.saveAll(stockParser.getStockList());
     }
 
