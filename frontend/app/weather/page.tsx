@@ -32,9 +32,12 @@ export default function Weather() {
         fetchData();
     }, []);
 
+    //flex p-32 mx-auto bg-gradient-to-t from-orange-500 to-blue-500 w-full h-full
+
     return (
-        <section className={`container flex p-32 mx-auto bg-gradient-to-t from-[${theme[0]}] via-[${theme[1]}] to-[${theme[2]}]`}>
+        <main className={`min-h-screen bg-gradient-to-t from-orange-500 to-blue-500`}>
             <Nav />
+            <section className={`container mx-auto p-32`}>
             <div className="grid grid-cols-2 gap-8 mx-auto">
                 <div className="grid grid-rows-2 gap-8 mx-auto">
                     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -74,7 +77,6 @@ export default function Weather() {
                             <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                                 {sevenDaysWeather.map((day, index) => (
                                     <li key={index} className="py-3 sm:py-4">
-                                        {/* Your existing content here */}
                                         <div className="flex items-center">
                                             <div className="flex-shrink-0">
                                                 <WiDaySunny size={30}/>
@@ -98,6 +100,7 @@ export default function Weather() {
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
+        </main>
     );
 }

@@ -4,17 +4,52 @@ import com.example.backend.model.stock.Stock;
 import com.example.backend.model.weather.Weather;
 import com.example.backend.parser.StockParser;
 import com.example.backend.repository.stock.StockRepository;
+import com.example.backend.service.weather.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StockService {
     @Autowired
     StockRepository stockRepository;
 
+    @Autowired
+    WeatherService weatherService;
+
     private StockParser stockParser;
+
+    public Stock getGainer(){
+        Weather weather = weatherService.getToday();
+        Optional<List<Weather>> similarWeathers = weatherService.getSimilar(weather);
+        if (similarWeathers.isPresent() && !similarWeathers.get().isEmpty()) {
+            List<String> dates = new ArrayList<>();
+            for (Weather w : similarWeathers.get()) {
+                dates.add(w.getDate());
+            }
+
+            List<Stock> stocksForDates = stockRepository.findByDates(dates);
+            Stock topGainer = null;
+            float maxGain = Float.MIN_VALUE;
+
+            for (Stock stock : stocksForDates) {
+                float priceStart = stock.getPriceStart();
+                float priceEnd = stock.getPriceEnd();
+                float percentageGain = ((priceEnd - priceStart) / priceStart) * 100;
+
+                if (percentageGain > maxGain) {
+                    maxGain = percentageGain;
+                    topGainer = stock;
+                }
+            }
+
+            return topGainer;
+        }
+        return null;
+    }
 
     public void deleteAll(){
         stockRepository.deleteAll();

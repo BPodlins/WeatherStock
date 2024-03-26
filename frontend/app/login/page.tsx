@@ -1,15 +1,19 @@
 'use client'
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useRouter } from "next/router";
+import { useAuth } from '../components/utils/api'; // Adjust the path as necessary
 import Nav from "@/app/components/nav/Nav";
 import { ThemeLoader } from "@/app/components/theme/themeLoader";
 
 const LoginPage = () => {
     const [theme, setTheme] = useState(ThemeLoader());
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<{ username: string; password: string; }>({
         username: "",
         password: "",
     });
+    const { login } = useAuth();
+    const router = useRouter();
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,29 +22,24 @@ const LoginPage = () => {
     const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+
         fetch("http://localhost:8080/signin", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         })
-            .then((response) => {
+            .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
                 return response.json();
             })
-            .then((data) => {
+            .then(data => {
                 console.log("Login successful", data);
-
-                // Store the token or session ID in local storage or cookies
-                // Example assuming your response contains a token:
-                localStorage.setItem("token", data.token);
-
-                // Now you can redirect to another page or update the UI to reflect the logged-in state
+                login();
+                router.push('/');
             })
-            .catch((error) => {
+            .catch(error => {
                 console.error("There was a problem with the login request", error);
             });
     };

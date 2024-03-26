@@ -1,15 +1,36 @@
-const fetchWithCredentials = async (url, options = {}, serverSideHeaders = {}) => {
-    const headers = {
-        'Content-Type': 'application/json',
-        ...serverSideHeaders, // Includes cookies when called server-side
-    };
+'use client'
 
-    try {
-        const response = await fetch(url, { ...options, headers, credentials: 'include' });
-        if (!response.ok) throw new Error('Network response was not OK');
-        return await response.json();
-    } catch (error) {
-        console.error('Fetch Error:', error);
-        throw error;
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+interface AuthContextType {
+    isAuthenticated: boolean;
+    login: () => void;
+    logout: () => void;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+interface AuthProviderProps {
+    children: ReactNode;
+}
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+    const login = () => setIsAuthenticated(true);
+    const logout = () => setIsAuthenticated(false);
+
+    return (
+        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
+
+export const useAuth = () => {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error('useAuth must be used within an AuthProvider');
     }
+    return context;
 };

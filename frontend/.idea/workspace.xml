@@ -6,10 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="ccb316bc-24ac-4925-9269-2e0eb9ab2532" name="Changes" comment="adding front">
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/stock/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/stock/StockRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/nav/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/nav/Nav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/utils/api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/utils/api.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mystocks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/mystocks/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/stock/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/stock/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/weather/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/weather/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +57,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Projekty\\ProjektyWWolnymCzasie\\WeatherStock\\WeatherStock\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -112,7 +123,11 @@
       <workItem from="1708807378924" duration="1068000" />
       <workItem from="1708813853834" duration="1617000" />
       <workItem from="1708851716551" duration="2607000" />
-      <workItem from="1710354093386" duration="2643000" />
+      <workItem from="1710354093386" duration="2885000" />
+      <workItem from="1710671881050" duration="1157000" />
+      <workItem from="1710689878310" duration="3826000" />
+      <workItem from="1710704009612" duration="779000" />
+      <workItem from="1711448514243" duration="12890000" />
     </task>
     <servers />
   </component>

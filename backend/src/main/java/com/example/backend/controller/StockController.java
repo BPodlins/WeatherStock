@@ -19,9 +19,10 @@ public class StockController {
     @Autowired
     StockService stockService;
 
-    @GetMapping("/getbigstock")
-    public ResponseEntity<List<Stock>> getBigStock(){
-        return null;
+    @GetMapping("/getTodaysStock")
+    public ResponseEntity<Stock> getGainer(){
+        Stock gainer = stockService.getGainer();
+        return ResponseEntity.ok(gainer);
     }
 
     @GetMapping("/get7daysStock")
@@ -33,6 +34,8 @@ public class StockController {
     public ResponseEntity<List<Stock>> userStocks(){
         return null;
     }
+
+    //calls to load the data to mongo
 
     @GetMapping("admin/parseStocksAndLoadToDB1")
     public ResponseEntity<List<Stock>> allStocks1(){
