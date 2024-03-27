@@ -26,7 +26,7 @@ public class WeatherController {
 
     @GetMapping("/admin/getweatherFromAPI")
     public ResponseEntity<List<Weather>> getWeatherInfo() {
-        String apiUrl = "https://meteostat.p.rapidapi.com/stations/daily?station=10637&start=2024-03-01&end=2024-03-31";
+        String apiUrl = "https://meteostat.p.rapidapi.com/stations/daily?station=10637&start=2023-01-01&end=2023-12-31";
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -78,15 +78,14 @@ public class WeatherController {
         return ResponseEntity.ok(allWeather);
     }
 
-    @DeleteMapping ("admin/deleteAllWeather")
-    public ResponseEntity<List<Weather>> deleteAllWeatherFromDB() {
+    @GetMapping ("admin/deleteAllWeather")
+    public void deleteAllWeatherFromDB() {
         weatherService.deleteAll();
-        return (ResponseEntity<List<Weather>>) ResponseEntity.accepted();
     }
 
     @GetMapping("/gettoday")
     public ResponseEntity<Weather> getWeatherToday(){
-        Weather today = weatherService.getToday();
+        Weather today = weatherService.getTodayHardCoded();
         //Weather todayHardCoded = weatherService.getToday();
 
         return ResponseEntity.ok(today);
@@ -94,7 +93,7 @@ public class WeatherController {
 
     @GetMapping("/gettomorrow")
     public ResponseEntity<Weather> getWeatherTomorrow(){
-        Weather tomorrow = weatherService.getTomorrow();
+        Weather tomorrow = weatherService.getTomorrowHardCoded();
         //Weather tomorrowHardCoded = weatherService.getTomorrow();
 
         return ResponseEntity.ok(tomorrow);
@@ -102,7 +101,7 @@ public class WeatherController {
 
     @GetMapping("/get7days")
     public ResponseEntity<List<Weather>> getWeather7(){
-        List<Weather> sevenDays = weatherService.get7days();
+        List<Weather> sevenDays = weatherService.get7daysHardCoded();
         //List<Weather> sevenDaysHardCoded = weatherService.get7days();
 
         return ResponseEntity.ok(sevenDays);

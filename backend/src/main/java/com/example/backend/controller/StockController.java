@@ -21,13 +21,21 @@ public class StockController {
 
     @GetMapping("/getTodaysStock")
     public ResponseEntity<Stock> getGainer(){
+        Stock today = stockService.getTodayGainer();
+        return ResponseEntity.ok(today);
+    }
+
+    @GetMapping("getBigGainer")
+    public ResponseEntity<Stock> getBigGainer(){
         Stock gainer = stockService.getGainer();
         return ResponseEntity.ok(gainer);
     }
 
-    @GetMapping("/get7daysStock")
+
+    @GetMapping("/get7Days")
     public ResponseEntity<List<Stock>> get7days(){
-        return null;
+        List<Stock> sevenDays = stockService.get7Days();
+        return ResponseEntity.ok(sevenDays);
     }
 
     @GetMapping("/mystocks")

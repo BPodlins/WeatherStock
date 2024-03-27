@@ -60,7 +60,12 @@ public class StockParser {
                 stock.setPriceEnd(priceEnd);
                 stock.setPercentage(percentage);
                 stock.setDate(date);
-                stockList.add(stock);
+                int border = 2019;
+                String preParse = stock.getDate();
+                int afterParse = Integer.parseInt(preParse.substring(0, 4));
+                if (border < afterParse) {
+                    stockList.add(stock);
+                }
             }
         }
     }

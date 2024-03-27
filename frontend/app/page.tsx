@@ -1,10 +1,19 @@
 'use client'
 
-import React from "react";
+import React, {useEffect} from "react";
 import { useState } from "react";
 import Nav from "@/app/components/nav/Nav";
 import { ThemeLoader } from "@/app/components/theme/themeLoader";
 import {AuthProvider} from "@/app/components/utils/api";
+
+interface Stock {
+    id: string;
+    name: string;
+    priceStart: number;
+    priceEnd: number;
+    percentage: string;
+    date: string;
+}
 
 const Home = () => {
     const [theme, setTheme] = useState(ThemeLoader());
@@ -12,6 +21,24 @@ const Home = () => {
     const test = () => {
         console.log(theme[0] +', ' +theme[1] +',' +theme[2]);
     };
+
+    const [biggestGainer, setBiggestGainer] = useState(null);
+
+    useEffect(() => {
+        const fetchBiggestGainer = async () => {
+            try {
+                const response = await fetch("http://localhost:8080/getTodaysStock");
+                const data = await response.json();
+                setBiggestGainer(data);
+            } catch (error) {
+                console.error("Error fetching biggest gainer data:", error);
+            }
+        };
+
+        fetchBiggestGainer();
+    }, []);
+
+
 
     return (
         <AuthProvider>

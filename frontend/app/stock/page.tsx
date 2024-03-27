@@ -13,7 +13,7 @@ export default function Stock(){
     useEffect(() => {
         const fetchBiggestGainer = async () => {
             try {
-                const response = await fetch("http://localhost:8080/getbigstock");
+                const response = await fetch("http://localhost:8080/getBigGainer");
                 const data = await response.json();
                 setBiggestGainer(data);
             } catch (error) {
@@ -23,7 +23,7 @@ export default function Stock(){
 
         const fetchSevenDaysStocks = async () => {
             try {
-                const response = await fetch("http://localhost:8080/get7days");
+                const response = await fetch("http://localhost:8080/get7Days");
                 const data = await response.json();
                 setSevenDaysStocks(data);
             } catch (error) {

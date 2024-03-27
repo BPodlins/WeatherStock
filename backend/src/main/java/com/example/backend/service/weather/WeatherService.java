@@ -52,22 +52,19 @@ public class WeatherService {
 
 
     public List<Weather> get7daysHardCoded() {
-        LocalDate today = LocalDate.now().plusDays(1);
-        LocalDate sevenDaysAgo = today.minusDays(7);
-
-        String todayStr = today.toString();
-        String sevenDaysAgoStr = sevenDaysAgo.toString();
+        String todayStr = "2023-03-27";
+        String sevenDaysAgoStr = "2023-03-19";
 
         return weatherRepository.findByDateBetween(sevenDaysAgoStr, todayStr);
     }
 
     public Weather getTomorrowHardCoded() {
-        String tomorrowRegex = LocalDate.now().plusDays(1).toString();
+        String tomorrowRegex = "2023-03-28";
         return weatherRepository.findByDate(tomorrowRegex).orElseThrow();
     }
 
     public Weather getTodayHardCoded() {
-        String todayDate = LocalDate.now().toString();
+        String todayDate = "2023-03-27";
         return weatherRepository.findByDate(todayDate).orElseThrow();
     }
 

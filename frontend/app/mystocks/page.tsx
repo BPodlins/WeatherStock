@@ -32,7 +32,6 @@ const getServerSideProps: GetServerSideProps = async (context) => {
 
         return {props: {stocksData}};
     } catch (error) {
-        // If authentication fails, redirect to the login page
         return {
             redirect: {
                 destination: '/login',

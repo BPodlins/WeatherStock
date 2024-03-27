@@ -22,6 +22,17 @@ public class StockService {
 
     private StockParser stockParser;
 
+    public Stock getTodayGainer(){
+        return stockRepository.findByDate("2023-03-27");
+    }
+
+    public List<Stock> get7Days(){
+        String todayStr = "2023-03-27";
+        String sevenDaysAgoStr = "2023-03-19";
+
+        return stockRepository.findByDateBetween("", "");
+    }
+
     public Stock getGainer(){
         Weather weather = weatherService.getToday();
         Optional<List<Weather>> similarWeathers = weatherService.getSimilar(weather);
