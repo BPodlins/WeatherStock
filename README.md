@@ -1,20 +1,36 @@
 # WeatherStock
 
-WeatherStock is a web app that returns stock picks based on the current weather. The idea behind the app is to check the current weather, then search for days in the past with similar weather conditions. From there, it calculates the biggest gainers from each of those days. Unfortunately, due to several limitations, like Java's heap memory limit and the free MongoDB memory capacity being quickly filled by stock data, there have been some compromises:
+WeatherStock is an innovative web application that delivers stock picks based on current weather conditions. The core idea is to examine today's weather and identify similar weather days from the past. For each of those days, the app determines the stocks that showed the most significant gains and presents the top performer. However, the app currently faces several challenges due to limitations such as Java's heap memory cap and the quick exhaustion of free MongoDB memory by stock data, leading to a few compromises:
 
-- The current data and stock info aren't updated anymore because there's no more memory.
-- Only one or two more users can be registered due to the memory problem.
-- When you ask for the biggest gainer of the day, I check the current weather parameters, but the historical weather search isn't thorough.
-- Saving stocks that you bought or would like to watch does not work, also memory problem
+- Due to memory constraints, live updates of stock information and current data have been discontinued. The app now utilizes weather data from 2023 and stock data ranging from January 1, 2020, to March 14, 2024. This approach is based on the observation that stock data, particularly concerning the largest percentage gains, can exhibit greater year-to-year variability compared to weather data.
+- New user registrations are not possible at the moment because of memory issues.
+- The app checks current weather parameters through an API for today's biggest gainer, but historical weather data searches are not as comprehensive.
+- Functionality to save stocks for monitoring or future purchase is unavailable, again due to memory limitations.
 
-## Tech stack:
+## Tech Stack
 - Java
 - Spring Boot
 - TypeScript
 - NextJS
 - Tailwind
+- GCR
+- Vercel
 
-## Future ToDo:
-- Get "MyStocks" feature working properly.
-- Solve the memory problem, either by upgrading the MongoDB tier or through other measures.
-- Make the background change depending on the weather and time of day.
+## Future Enhancements
+### Fixes
+- Implement server-side rendering (SSR) to perform all data fetches in the background globally, allowing pages to simply use the fetched data.
+- Modify pages to eliminate the exclusive reliance on client-side rendering.
+- Refine authentication mechanisms.
+
+### Features
+- Introduce dynamic background changes that reflect the current weather and time of day.
+- Add a "MyStocks" feature to enable users to keep track of their preferred stocks, including those received as stock picks of the day.
+- Incorporate sliders for finer control over stock selection criteria.
+
+### Minor Adjustments
+- Ensure the prominently displayed stock pick remains visible on the homepage, updating only upon user logout.
+- Conduct code cleanup, including the removal of unused functions, enhancing readability, renaming functions and parameters for better clarity, and consolidating type definitions currently scattered across individual classes.
+
+#### Login Details
+- **Username:** test
+- **Password:** test123
