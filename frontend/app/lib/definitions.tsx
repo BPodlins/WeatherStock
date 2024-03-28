@@ -1,13 +1,13 @@
 import {string} from "prop-types";
 
-type User = {
+export type User = {
     id: string;
     username: string;
     mail: string;
     email: string;
 }
 
-type Weather = {
+export type Weather = {
     id: string;
     date: string;
     temperatureAvg: number;
@@ -18,7 +18,16 @@ type Weather = {
     };
 };
 
-type FormData = {
+export type FormData = {
     username: string;
     password: string;
 }
+
+export  type Stock = {
+    id: string,
+    name: string,
+    priceStart: number,
+    priceEnd: number,
+    percentage: string,
+    date: string
+};

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
-// Ensure you adjust this import according to where your useAuth hook is located in your project
 import { useAuth } from "@/app/components/utils/api";
 
 const Nav: React.FC = () => {
     const { isAuthenticated, logout } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Toggle for the mobile menu
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (

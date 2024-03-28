@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useAuth } from '../components/utils/api'; // Adjust the path as necessary
 import Nav from "@/app/components/nav/Nav";
 import { ThemeLoader } from "@/app/components/theme/themeLoader";
@@ -46,7 +46,7 @@ const LoginPage = () => {
 
 
     return (
-        <section className={`my-1 overflow-hidden flex p-32 min-h-screen bg-gradient-to-t from-[${theme[0]}] via-[${theme[1]}] to-[${theme[2]}]`}>
+        <section className={`my-1 overflow-hidden flex p-32 min-h-screen bg-gradient-to-t from-orange-500 to-blue-500`}>
             <Nav />
             <div className="overflow-hidden flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">

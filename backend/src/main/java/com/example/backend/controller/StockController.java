@@ -25,14 +25,14 @@ public class StockController {
         return ResponseEntity.ok(today);
     }
 
-    @GetMapping("getBigGainer")
+    @GetMapping("/getBigGainer")
     public ResponseEntity<Stock> getBigGainer(){
         Stock gainer = stockService.getGainer();
         return ResponseEntity.ok(gainer);
     }
 
 
-    @GetMapping("/get7Days")
+    @GetMapping("/get7DaysStock")
     public ResponseEntity<List<Stock>> get7days(){
         List<Stock> sevenDays = stockService.get7Days();
         return ResponseEntity.ok(sevenDays);

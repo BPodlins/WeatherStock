@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "@/app/components/nav/Nav";
 import theme from "tailwindcss/defaultTheme";
 import {WiDaySunny, WiCloudy} from "react-icons/wi";
+import  { Weather } from "../lib/definitions"
 
 export default function Weather() {
     const [todayWeather, setTodayWeather] = useState<Weather | null>(null);
@@ -31,8 +32,6 @@ export default function Weather() {
 
         fetchData();
     }, []);
-
-    //flex p-32 mx-auto bg-gradient-to-t from-orange-500 to-blue-500 w-full h-full
 
     return (
         <main className={`min-h-screen bg-gradient-to-t from-orange-500 to-blue-500`}>

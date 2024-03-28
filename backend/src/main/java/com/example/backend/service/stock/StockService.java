@@ -5,12 +5,24 @@ import com.example.backend.model.weather.Weather;
 import com.example.backend.parser.StockParser;
 import com.example.backend.repository.stock.StockRepository;
 import com.example.backend.service.weather.WeatherService;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class StockService {
@@ -20,46 +32,132 @@ public class StockService {
     @Autowired
     WeatherService weatherService;
 
-    private StockParser stockParser;
+    @Value("${example.backend.weatherAPIKey}")
+    private String weatherAPIKey;
 
+    private StockParser stockParser;
     public Stock getTodayGainer(){
-        return stockRepository.findByDate("2023-03-27");
+        String todayStr = "2023-03-27";
+        List<Stock> stocksForDay = stockRepository.findAllByDate(todayStr);
+
+        if (stocksForDay.isEmpty()) {
+            return null;
+        }
+
+        Stock biggestGainer = stocksForDay.get(0);
+        float maxGain = Float.parseFloat(biggestGainer.getPercentage());
+
+        for (Stock stock : stocksForDay) {
+            float currentGain = Float.parseFloat(stock.getPercentage());
+            if (currentGain > maxGain) {
+                maxGain = currentGain;
+                biggestGainer = stock;
+            }
+        }
+        return biggestGainer;
     }
 
     public List<Stock> get7Days(){
-        String todayStr = "2023-03-27";
         String sevenDaysAgoStr = "2023-03-19";
+        String todayStr = "2023-03-27";
+        LocalDate start = LocalDate.parse(sevenDaysAgoStr);
+        LocalDate end = LocalDate.parse(todayStr);
+        List<Stock> biggestGainers = new ArrayList<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        return stockRepository.findByDateBetween("", "");
-    }
+        for (LocalDate date = start; !date.isAfter(end); date = date.plusDays(1)) {
+            String dateStr = date.format(formatter);
+            List<Stock> stocksForDay = stockRepository.findAllByDate(dateStr);
 
-    public Stock getGainer(){
-        Weather weather = weatherService.getToday();
-        Optional<List<Weather>> similarWeathers = weatherService.getSimilar(weather);
-        if (similarWeathers.isPresent() && !similarWeathers.get().isEmpty()) {
-            List<String> dates = new ArrayList<>();
-            for (Weather w : similarWeathers.get()) {
-                dates.add(w.getDate());
+            if (stocksForDay.isEmpty()) {
+                continue;
             }
 
-            List<Stock> stocksForDates = stockRepository.findByDates(dates);
-            Stock topGainer = null;
-            float maxGain = Float.MIN_VALUE;
+            Stock biggestGainer = stocksForDay.get(0);
+            float maxGain = Float.parseFloat(biggestGainer.getPercentage());
 
-            for (Stock stock : stocksForDates) {
-                float priceStart = stock.getPriceStart();
-                float priceEnd = stock.getPriceEnd();
-                float percentageGain = ((priceEnd - priceStart) / priceStart) * 100;
-
-                if (percentageGain > maxGain) {
-                    maxGain = percentageGain;
-                    topGainer = stock;
+            for (Stock stock : stocksForDay) {
+                float currentGain = Float.parseFloat(stock.getPercentage());
+                if (currentGain > maxGain) {
+                    maxGain = currentGain;
+                    biggestGainer = stock;
                 }
             }
 
-            return topGainer;
+            biggestGainers.add(biggestGainer);
         }
-        return null;
+
+        return biggestGainers;
+    }
+
+    public Stock getGainer(){
+        String todayStr = LocalDate.now().toString();
+        String apiUrl = "https://meteostat.p.rapidapi.com/stations/daily?station=10637&start=" + todayStr + "&end=" + todayStr;
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-RapidAPI-Key", weatherAPIKey);
+        headers.set("X-RapidAPI-Host", "meteostat.p.rapidapi.com");
+
+        HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+        ResponseEntity<String> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, httpEntity, String.class);
+        String responseBody = responseEntity.getBody();
+
+        Weather todayWeather = null;
+        try {
+            JSONObject jsonResponse = new JSONObject(responseBody);
+            JSONArray dataArray = jsonResponse.getJSONArray("data");
+
+            if (dataArray.length() > 0) {
+                JSONObject weatherData = dataArray.getJSONObject(0);
+
+                todayWeather = new Weather();
+                todayWeather.setDate(weatherData.getString("date"));
+                todayWeather.setTemperatureAvg((float) weatherData.getDouble("tavg"));
+                todayWeather.setAirPressure((float) weatherData.getDouble("pres"));
+                todayWeather.setWindSpeed((float) weatherData.getDouble("wspd"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        if (todayWeather == null) {
+            return null;
+        }
+
+        List<Stock> stocks = findStocksForSimilarWeatherConditions(todayWeather);
+
+        return stocks.stream().max(Comparator.comparing(stock -> Float.parseFloat(stock.getPercentage()))).orElse(null);
+    }
+
+    private List<Stock> findStocksForSimilarWeatherConditions(Weather todayWeather) {
+        List<Weather> allWeathers = weatherService.getAllWeather();
+
+        float temperatureMargin = 3.0f;
+        float pressureMargin = 20.0f;
+        float windSpeedMargin = 5.0f;
+
+        List<Weather> similarWeathers = allWeathers.stream().filter(weather ->
+                Math.abs(weather.getTemperatureAvg() - todayWeather.getTemperatureAvg()) <= temperatureMargin &&
+                        Math.abs(weather.getAirPressure() - todayWeather.getAirPressure()) <= pressureMargin &&
+                        Math.abs(weather.getWindSpeed() - todayWeather.getWindSpeed()) <= windSpeedMargin
+        ).collect(Collectors.toList());
+
+        List<Stock> biggestGainers = new ArrayList<>();
+
+        for (Weather weather : similarWeathers) {
+            List<Stock> stocksForDay = stockRepository.findAllByDate(weather.getDate());
+            Stock biggestGainer = stocksForDay.stream()
+                    .max(Comparator.comparing(stock -> Float.parseFloat(stock.getPercentage())))
+                    .orElse(null);
+
+            if (biggestGainer != null) {
+                biggestGainers.add(biggestGainer);
+            }
+        }
+
+        return biggestGainers;
     }
 
     public void deleteAll(){

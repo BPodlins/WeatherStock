@@ -15,7 +15,6 @@ public interface WeatherRepository extends MongoRepository<Weather, String> {
 
     List<Weather> findAllByDateBetween(String startDate, String endDate);
 
-
     List<Weather> findByDateBetween(String today, String sevenDaysLater);
 
     @Query("{ 'temperatureAvg' : { $gt: ?0, $lt: ?1 }, 'airPressure' : { $gt: ?2, $lt: ?3 }, 'windSpeed' : { $gt: ?4, $lt: ?5 } }")

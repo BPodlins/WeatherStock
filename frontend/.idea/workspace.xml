@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccb316bc-24ac-4925-9269-2e0eb9ab2532" name="Changes" comment="adding front">
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/weather/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/stock/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/model/stock/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/stock/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/stock/StockRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/weather/WeatherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/stock/StockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/nav/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/nav/Nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/utils/api.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/utils/api.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/definitions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mystocks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/mystocks/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signup/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/stock/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/stock/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/weather/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/weather/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +132,8 @@
       <workItem from="1710704009612" duration="779000" />
       <workItem from="1711448514243" duration="13184000" />
       <workItem from="1711532529625" duration="468000" />
-      <workItem from="1711544276506" duration="2922000" />
+      <workItem from="1711544276506" duration="3067000" />
+      <workItem from="1711622972312" duration="11767000" />
     </task>
     <servers />
   </component>

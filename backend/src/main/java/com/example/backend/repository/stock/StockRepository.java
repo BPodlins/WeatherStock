@@ -17,4 +17,8 @@ public interface StockRepository extends MongoRepository<Stock, String> {
     Stock findByDate(String s);
 
     List<Stock> findByDateBetween(String today, String sevenDaysLater);
+
+    List<Stock> findAllByDate(String todayStr);
+
+    List<Stock> findAllByDateBetween(String todayStr, String sevenDaysAgoStr);
 }
