@@ -33,7 +33,7 @@ const MyStocks = () => {
 
         const fetchStocksData = async () => {
             try {
-                const response = await fetch("http://localhost:8080/mystocks", {
+                const response = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//mystocks", {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${jwtToken}`,

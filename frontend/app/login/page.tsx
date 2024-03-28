@@ -23,7 +23,7 @@ const LoginPage = () => {
         e.preventDefault();
 
 
-        fetch("http://localhost:8080/signin", {
+        fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//signin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
@@ -106,6 +106,7 @@ const LoginPage = () => {
 
                         {/* Link to the signup page using href */}
                         <p className="mt-4 text-center">
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             Don't have an account? <a href="../signup" className="text-primary-600 dark:text-primary-400">Sign up here</a>
                         </p>
                     </div>

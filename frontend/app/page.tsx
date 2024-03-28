@@ -3,8 +3,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Nav from "@/app/components/nav/Nav";
-import { AuthContext } from "@/app/components/utils/api";
-import {ThemeLoader} from "@/app/components/theme/themeLoader"; // Adjust this import based on your project structure
+import { AuthContext, AuthContextType } from "@/app/components/utils/api";
+import {ThemeLoader} from "@/app/components/theme/themeLoader";
 
 interface Stock {
     id: string;
@@ -29,13 +29,13 @@ const Home = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/getTodaysStock");
+            const response = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app/getTodaysStock");
             if (!response.ok) {
                 throw new Error("Failed to fetch");
             }
             const data = await response.json();
             setBiggestGainer(data);
-            setButtonClicked(true); // Optionally hide the button after fetching data
+            setButtonClicked(true);
         } catch (error) {
             console.error("Error fetching biggest gainer data:", error);
         }

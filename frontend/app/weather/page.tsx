@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Nav from "@/app/components/nav/Nav";
-import theme from "tailwindcss/defaultTheme";
 import {WiDaySunny, WiCloudy} from "react-icons/wi";
 import  { Weather } from "../lib/definitions"
 
@@ -14,15 +13,15 @@ export default function Weather() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const todayResponse = await fetch("http://localhost:8080/gettoday");
+                const todayResponse = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//gettoday");
                 const todayData = await todayResponse.json();
                 setTodayWeather(todayData);
 
-                const tomorrowResponse = await fetch("http://localhost:8080/gettomorrow");
+                const tomorrowResponse = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//gettomorrow");
                 const tomorrowData = await tomorrowResponse.json();
                 setTomorrowWeather(tomorrowData);
 
-                const sevenDaysResponse = await fetch("http://localhost:8080/get7days");
+                const sevenDaysResponse = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//get7days");
                 const sevenDaysData = await sevenDaysResponse.json();
                 setSevenDaysWeather(sevenDaysData);
             } catch (error) {
@@ -41,6 +40,7 @@ export default function Weather() {
                 <div className="grid grid-rows-2 gap-8 mx-auto">
                     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             Today's weather
                         </h5>
                         {todayWeather && (
@@ -54,6 +54,7 @@ export default function Weather() {
                     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         {/* Tomorrow's Weather */}
                         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
                             Tomorrow's weather
                         </h5>
                         {tomorrowWeather && (

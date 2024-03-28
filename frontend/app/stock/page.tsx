@@ -20,7 +20,7 @@ export default function StockTracker() {
     useEffect(() => {
         const fetchBiggestGainer = async () => {
             try {
-                const response = await fetch("http://localhost:8080/getTodaysStock");
+                const response = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//getTodaysStock");
                 const data = await response.json();
                 setBiggestGainer(data);
             } catch (error) {
@@ -30,7 +30,7 @@ export default function StockTracker() {
 
         const fetchSevenDaysStocks = async () => {
             try {
-                const response = await fetch("http://localhost:8080/get7DaysStock");
+                const response = await fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//get7DaysStock");
                 const data = await response.json();
                 setSevenDaysStocks(data);
             } catch (error) {

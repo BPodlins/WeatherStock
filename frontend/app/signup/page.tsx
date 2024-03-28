@@ -19,7 +19,7 @@ const Page = () => {
     const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        fetch("http://localhost:8080/signup", {
+        fetch("https://weatherstock---weatherstock-vertvxcn4q-uc.a.run.app//signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
