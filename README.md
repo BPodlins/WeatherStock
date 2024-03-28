@@ -21,6 +21,7 @@ WeatherStock is an innovative web application that delivers stock picks based on
 - Implement server-side rendering (SSR) to perform all data fetches in the background globally, allowing pages to simply use the fetched data.
 - Modify pages to eliminate the exclusive reliance on client-side rendering.
 - Refine authentication mechanisms.
+- as AuthContextType in "/"
 
 ### Features
 - Introduce dynamic background changes that reflect the current weather and time of day.
